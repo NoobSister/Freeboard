@@ -12,18 +12,18 @@ function post_data() {
 	frm1.submit();
 }
 </script>
-<link rel="stylesheet" href="../css/temp.css?v=3">
+<link rel="stylesheet" href="css/temp.css?v=3">
 </head>
 <body>
 <c:if test="${sessionScope.user == null}">
 	<script type="text/javascript">
 		alert('로그인 후 이용할 수 있습니다.');
-		location.href='../loginView.jsp';	// community 폴더 위로 이동한 위치의 loginView.jsp	
+		location.href='login.do';	// community 폴더 위로 이동한 위치의 loginView.jsp	
 	</script>
 </c:if>
 <h3>동아리 커뮤니티 글 쓰기</h3>
 <hr>
-<form name="frm1" method="post" action="insertAction.jsp">
+<form name="frm1" method="post" action="save.do">
 <%-- <input type="hidden" name="ip" value="${request.remoteAddr}"> --%>
  <table>
  	<tr><th>제목</th>
@@ -33,7 +33,7 @@ function post_data() {
  		<th>작성자</th>
  		<td><!-- <input type="text" name="name" size="50" required> -->
  		<input type="text" name="name" size="50" readonly value="${sessionScope.user.name}">
- 		</td>
+ 		</td>	<!-- "" 문자열 길이 0 -->
  	</tr>
  	
  	<tr><th>글 비밀번호</th>
@@ -46,7 +46,7 @@ function post_data() {
  	<tr><td colspan="2" align="center">
  	<input type="submit" value="저장" class="btn" >
  	<input type="reset"  value="다시쓰기" class="btn">
- 	<input type="button" value="목록" onclick="location.href='listAction.jsp'" class="btn">
+ 	<input type="button" value="목록" onclick="location.href='list.do'" class="btn">
  	</td></tr>
  </table>
  </form>

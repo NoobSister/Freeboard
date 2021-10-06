@@ -16,15 +16,17 @@
 	%>
 </c:if>
 
-	<a href="community/listAction.jsp">커뮤니티 게시판</a>
+	<a href="list.do">커뮤니티 게시판</a>
 	<c:if test="${sessionScope.user == null}">
-		<a href="loginView.jsp">로그인</a>
+		<a href="login.do">로그인</a>
+		<!-- <a href="./login.do">로그인</a> -->	<!-- 현재 경로 freeboard 에서 login.do -->
+		<!-- <a href="/login.do">로그인</a> -->	<!-- root context 에서 login.do -->
 	</c:if>
 	<c:if test="${sessionScope.user != null}">
 	<!-- 로그인된 상태 -->
 	<br>${user.name}(${user.email}) 님 반갑습니다. <br>
 	
-		<a href="logout.jsp">로그아웃</a>
+		<a href="logout.do">로그아웃</a>
 	</c:if>
 </body>
 </html>
