@@ -11,8 +11,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>day7 글 상세보기</title>
 <link rel="stylesheet" href="css/freeboard.css?v=3">
+<link rel="stylesheet" href="css/flexbox2.css?v=3">
 </head>
 <body>
+<%@ include file="../top.jsp" %>
+
+<section>
 	<!-- 문서가 생성될때 실행 -->
 	<h3>동아리 커뮤니티</h3>
 	<hr>
@@ -124,6 +128,8 @@
          </div>
       </div>
    </div>
+   </section>
+   <%@ include file="../bottom.jsp" %>
    <!-- 모달 끝 -->
    <script type="text/javascript">
 	   var modal = document.getElementById('myModal');

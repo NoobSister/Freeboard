@@ -14,6 +14,8 @@ import com.jcpdev.controller.action.ActionForward;
 import com.jcpdev.controller.action.CommentAction;
 import com.jcpdev.controller.action.DeleteAction;
 import com.jcpdev.controller.action.DetailAction;
+import com.jcpdev.controller.action.GalleryListAction;
+import com.jcpdev.controller.action.GalleryRegistAction;
 import com.jcpdev.controller.action.InsertAction;
 import com.jcpdev.controller.action.ListAction;
 import com.jcpdev.controller.action.LoginAction;
@@ -81,6 +83,14 @@ public class FrontController extends HttpServlet {
 			forward = action.execute(request, response);
 		} else if (spath.equals("/logout.do")) {
 			Action action = new LogoutAction();
+			forward = action.execute(request, response);
+		} else if (spath.equals("/gallery.do")) {
+//			path = "gallery/gallery.jsp";
+//			forward = new ActionForward(false, path);
+			Action action = new GalleryListAction();
+			forward = action.execute(request, response);
+		} else if (spath.equals("/regist.do")) {
+			Action action = new GalleryRegistAction();
 			forward = action.execute(request, response);
 		}
 		// 이 시점에서 forward 에 isRedirect 와 url 값이 저장되었으면 ok!
